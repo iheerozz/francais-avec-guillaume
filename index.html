@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francés con Guillaume - Mobile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #131635;
+            color: #e0e1dd;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
+            width: 100vw; /* Assure que la largeur est limitée à celle de la fenêtre */
+            position: relative; /* Pour gérer tout déplacement */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur de la fenêtre */
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+.header-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #e0e1dd;
+}
+
+/* Réglages pour la navigation */
+header nav ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.75em; /* Taille du texte réduite */
+    text-transform: uppercase; /* Apparence plus épurée */
+    letter-spacing: 0.05em; /* Espacement des lettres */
+}
+
+header nav ul li {
+    margin: 0 5px; /* Espacement réduit entre les éléments */
+}
+
+header nav ul li a {
+    color: #e0e1dd; 
+    text-decoration: none;
+    font-weight: 600; /* Légère augmentation du poids pour meilleure lisibilité */
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #4C4CFF;
+}
+
+/* Titre de l'introduction */
+.intro h2 {
+    margin-top: 0px !important; /* Réduction de la marge supérieure */
+    font-size: 1.5em !important;
+    color: #e0e1dd;
+    margin-bottom: 10px; /* Espacement réduit sous le titre */
+    text-align: center;
+}
+
+.intro p {
+    font-size: 0.8em !important; /* Réduction de la taille du texte */
+    color: #e0e1dd;
+    margin-bottom: 15px;
+    line-height: 1.3em; /* Ajustement de l'espacement entre les lignes pour meilleure lisibilité */
+    text-align: center; /* Centrer le texte pour un look plus propre */
+}
+
+
+.cta-button {
+    background-color: #6C63FF;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #4C4CFF;
+    transition: 0.3s;
+}
+
+.video-container {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+iframe {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.review-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review-section h3 {
+    font-size: 1.5em;
+    color: #e0e1dd;
+}
+
+.review-card {
+    background-color: #415a77;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    border-color: #4C4CFF;
+}
+
+.review-card h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #e0e1dd;
+}
+
+.review-card .stars {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 0.9em;
+    color: #e0e1dd;
+    text-align: justify;
+}
+
+footer {
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Section "Lo que te espera en el programa" */
+/* Ajustement des images dans la section du programme */
+
+.image-container {
+    display: flex; /* Utiliser flexbox pour contrôler l'alignement */
+    flex-direction: column; /* Empiler les images verticalement */
+    align-items: flex-start; /* Aligner les images légèrement vers la gauche */
+    width: 130%; /* Utiliser toute la largeur disponible */
+    padding: 0; /* Supprimer tout padding qui pourrait causer un décalage */
+    margin: 0 auto; /* Centrer le conteneur horizontalement */
+    box-sizing: border-box; /* Assurer que le padding ne cause pas de décalage */
+}
+
+.image-container img {
+    width: 95%; /* Occuper une grande partie du conteneur pour un léger décalage */
+    max-width: 95%; /* Limiter la largeur maximale pour un décalage à gauche */
+    height: auto; /* Conserver le ratio d'aspect des images */
+    margin: 0 0 0 -25%; /* Ajouter une marge gauche pour ajuster le décalage */
+    padding: 0; /* Supprimer tout padding */
+    object-fit: cover; /* S'assurer que les images remplissent bien le conteneur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandissement au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre au survol */
+}
+
+
+/* Section "Quiénes Somos" */
+.quien-somos .image-container-quien-somos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.quien-somos .image-container-quien-somos img {
+    width: 100%; /* Utiliser toute la largeur disponible */
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for "Quiénes Somos" */
+.quien-somos .image-container-quien-somos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Section des prix */
+.pricing-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    background-color: #f5f5f5; /* Fond clair pour contraste */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour profondeur */
+}
+
+.pricing-table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e0e0e0; /* Bordure légère et subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Limite la largeur pour garder un design compact */
+}
+
+.pricing-table.highlight {
+    background-color: #2b8dcc; /* Couleur d'accentuation */
+    color: #ffffff; /* Texte blanc pour contraste */
+    border: 1px solid #2b8dcc; /* Bordure assortie */
+    transform: translateY(-10px); /* Légère élévation dès le chargement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+    animation: pulse 1.5s infinite; /* Animation subtile */
+}
+
+@keyframes pulse {
+    0% { transform: translateY(-10px) scale(1); }
+    50% { transform: translateY(-12px) scale(1.03); }
+    100% { transform: translateY(-10px) scale(1); }
+}
+
+.pricing-table:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+
+.pricing-header h3 {
+    font-size: 1.4em;
+    color: #333; /* Texte sombre pour bon contraste */
+    margin: 0 0 10px 0;
+}
+
+.pricing-table.highlight .pricing-header h3,
+.pricing-table.highlight .price,
+.pricing-table.highlight .features li span {
+    color: #ffffff; /* Couleur blanche pour les éléments en surbrillance */
+}
+
+.pricing-header .price {
+    font-size: 1.8em;
+    color: #2b8dcc; /* Couleur accentuée pour le prix */
+    margin: 10px 0;
+}
+
+.pricing-table.highlight .price {
+    color: #ffffff; /* Prix en blanc pour la carte mise en avant */
+}
+
+.pricing-header .description {
+    font-size: 1em;
+    color: #666; /* Gris doux pour le texte secondaire */
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+    color: #333;
+    text-align: left; /* Texte aligné à gauche pour lisibilité */
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.features li span {
+    margin-right: 10px;
+    font-size: 1.2em; /* Icônes légèrement plus grandes */
+    color: #2b8dcc; /* Couleur des icônes pour les éléments inclus */
+}
+
+.pricing-table.highlight .features li span {
+    color: #ffffff; /* Icônes blanches pour les éléments inclus */
+}
+.features li span.cross {
+    color: #f44336; /* Rouge/orange */
+}
+
+.cross {
+    color: #e57373; /* Rouge doux pour les éléments non inclus */
+}
+
+.note {
+    text-align: center;
+    font-size: 0.8em;
+    color: #999; /* Gris clair pour les notes en bas de page */
+    margin-top: 20px;
+}
+      
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #131635;
+            color: #e0e1dd;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #162C51, #203A6E, #131635);
+            color: #e0e1dd;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .header-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #e0e1dd;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #e0e1dd; 
+            text-decoration: none;
+            font-weight: normal;
+            transition: color 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        nav ul li a:hover {
+            color: #4C4CFF;
+        }
+
+        .intro-content {
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 1.8em;
+            color: #e0e1dd;
+        }
+
+        .intro p {
+            font-size: 1em;
+            color: #e0e1dd;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #6C63FF;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #4C4CFF;
+            transition: 0.3s;
+        }
+
+        .video-container {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        iframe {
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .review-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-section h3 {
+            font-size: 1.5em;
+            color: #e0e1dd;
+        }
+
+        .review-card {
+            background-color: #415a77;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: scale(1.05);
+            border-color: #4C4CFF;
+        }
+
+        .review-card h3 {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #e0e1dd;
+        }
+
+        .review-card .stars {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-size: 0.9em;
+            color: #e0e1dd;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            color: #e0e1dd;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-container img {
+            max-width: 90%; /* Optimisé pour mobile */
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .quien-somos {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .quien-somos h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .image-container-quien-somos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-container-quien-somos img {
+            width: 80%; /* Ajuste pour occuper plus d'espace sur mobile */
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container-quien-somos img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-tables {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .pricing-table {
+            background-color: #415a77;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-table:hover {
+            transform: scale(1.05);
+            border-color: #4C4CFF;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.3em;
+            color: #e0e1dd;
+            margin: 0;
+        }
+
+        .pricing-header .price {
+            font-size: 1.2em;
+            color: #f39c12;
+            margin-top: 5px;
+        }
+
+        .pricing-header .description {
+            font-size: 0.9em;
+            color: #e0e1dd;
+            margin-top: 5px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            color: #e0e1dd;
+        }
+
+        .check {
+            color: #4C4CFF;
+            margin-right: 10px;
+        }
+
+        .cross {
+            color: #ff4c4c;
+            margin-right: 10px;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 0.8em;
+            color: #e0e1dd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo-title">
+            <img src="https://i.ibb.co/mzLZ2z8/Untitled-design-2.png" alt="Logo" class="logo">
+            <h1>Francés con Guillaume</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#program">El programa</a></li>
+                <li><a href="#reviews">Opiniones</a></li>
+                <li><a href="#quien-somos">Quiénes somos</a></li>
+                <li><a href="#Precios">Precios</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="intro" class="intro">
+    <div class="container intro-content">
+        <h2 style="margin-top: 20px;">Aprende francés en línea con un enfoque único</h2> <!-- Marge supérieure réduite -->
+        <p style="font-size: 0.8em; color: #e0e1dd; margin-bottom: 15px; line-height: 1.3em; text-align: center;">
+            Un <span style="color: #4C4CFF;">enfoque único</span> en la enseñanza del francés a través de <span style="color: #4C4CFF;">juegos</span> y <span style="color: #4C4CFF;">actividades interactivas</span>. Perfecto para todos los niveles, desde principiante hasta avanzado.
+        </p>
+        <a href="#program" class="cta-button">Conozca el programa</a>
+        <div class="video-container">
+            
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/FuIgK6mdsNg?autoplay=1&loop=1&playlist=FuIgK6mdsNg&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                title="Video sobre el programa Francés con Guillaume" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Section du programme -->
+<section id="program" class="container">
+    <h2 style="text-align: center; color: #e0e1dd;">Lo que te espera en el programa</h2>
+    <div class="image-container">
+        <img src="https://i.ibb.co/fNqKcwJ/1000-actividades-8.png" alt="1000-actividades-8">
+        <img src="https://i.ibb.co/dLddMRd/1000-actividades-4.png" alt="1000-actividades-4">
+    </div>
+</section>
+
+<!-- Section Opinions des étudiants -->
+<section id="reviews" class="container">
+    <div class="review-section">
+        <h3>Lo que los estudiantes dicen de mis clases</h3>
+    </div>
+    <div class="reviews">
+        <div class="review-card">
+            <h3>Manuela</h3>
+            <div class="stars">★★★★★</div>
+            <p>"Tuve la suerte de tenerlo como profesor y debo decir que sus clases son excepcionales. No solo son dinámicas y divertidas, sino que también demuestra una gran paciencia con sus estudiantes. Lo que más me gusta de sus cursos es que se enfoca en hacer que uno entienda el francés de una manera más práctica y fácil. Sus técnicas y recursos didácticos son muy efectivos para aprender y retener el idioma, y logra transmitir su pasión por el francés a sus estudiantes. Gracias a sus enseñanzas, logré aprobar mi examen para titularme de la universidad y me siento mucho más segura en mi capacidad para hablar francés."</p>
+        </div>
+        <div class="review-card">
+            <h3>Paula</h3>
+            <div class="stars">★★★★★</div>
+            <p>"He tenido clases de francés con diferentes profesores y con ninguno de ellos había avanzado tan rápido (y divirtiéndome tanto) como lo hice con Guillaume. Cuando empecé con él, había dejado de estudiar el idioma hacía más de seis años y había olvidado prácticamente todo lo que sabía. Sus clases, junto con todo el material adicional que las acompaña, me permitieron desenterrar lo aprendido y, sin darme cuenta, llegar a un nivel más avanzado del idioma en poquísimo tiempo. Ha sido una experiencia muy enriquecedora porque me ha permitido conocer mucho más sobre la cultura francesa en particular y sobre la francofonía en general."</p>
+        </div>
+        <div class="review-card">
+            <h3>Laura</h3>
+            <div class="stars">★★★★★</div>
+            <p>"Aprender francés con Guillaume ha sido una gran experiencia para mí. Empecé hace poco más de dos meses, desde el nivel más básico y me siento orgullosa de cuánto he aprendido en este corto tiempo. Me gusta mucho que el programa que ofrece Guillaume no solamente está compuesto por las clases en línea, sino que, además, contiene otras herramientas que son muy útiles para reforzar el proceso de aprendizaje, como, por ejemplo, podcasts, videos y mapas mentales."</p>
+        </div>
+    </div>
+</section>
+<!-- Section Quién Somos -->
+<section id="quien-somos" class="container quien-somos">
+    <h2>Quien soy</h2>
+    <div class="image-container-quien-somos">
+        <img src="https://i.ibb.co/SNbnVvY/1000-actividades-9.png" alt="1000-actividades-9">
+    </div>
+</section>
+
+<!-- Section Precios -->
+<section id="Precios" class="container precios">
+    <h2>Precios</h2>
+    <div class="pricing-tables">
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <h3>Individual</h3>
+                <p class="price">$75.000 COP/hora</p>
+                <p class="description">Perfecto para un aprendizaje personalizado y enfocado en tus necesidades específicas.</p>
+            </div>
+            <ul class="features">
+                <li><span class="check">✔</span> Clase personalizada</li>
+                <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+                <li><span class="cross">✖</span> Sesiones grupales</li>
+                <li><span class="cross">✖</span> Actividades de grupo</li>
+                <li><span class="cross">✖</span> Competiciones exclusivas</li>
+            </ul>
+        </div>
+
+        <div class="pricing-table">
+            <div class="pricing-header">
+                <h3>Duo/Trio</h3>
+                <p class="price">$55.000 COP/hora</p>
+                <p class="description">Ideal para parejas o amigos que desean mejorar juntos y practicar en equipo.</p>
+            </div>
+            <ul class="features">
+                <li><span class="check">✔</span> Clase semi-personalizada</li>
+                <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+                <li><span class="cross">✖</span> Sesiones grupales</li>
+                <li><span class="cross">✖</span> Actividades de grupo</li>
+                <li><span class="cross">✖</span> Competiciones exclusivas</li>
+            </ul>
+        </div>
+
+        <div class="pricing-table highlight">
+            <div class="pricing-header">
+                <h3>Grupo de 4 a 6</h3>
+                <p class="price">$38.000 COP/hora</p>
+                <p class="description">Perfecto para aprender en un ambiente social y participar en divertidos juegos de grupo.</p>
+            </div>
+            <ul class="features">
+                <li><span class="check">✔</span> Clase interactiva</li>
+                <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+                <li><span class="check">✔</span> Sesiones grupales</li>
+                <li><span class="check">✔</span> Actividades de grupo</li>
+                <li><span class="check">✔</span> Competiciones exclusivas<span class="asterisk">*</span></li>
+            </ul>
+        </div>
+    </div>
+    <p class="note"><span class="asterisk">*</span>Compite y mejora tu francés cada dos semanas a través de divertidos juegos en nuestras competiciones exclusivas para grupos de 4 a 6 personas. <strong>¡Sesión 100% gratuita!</strong></p>
+</section>
+
+<footer>
+    <p>© 2024 Francés con Guillaume. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
